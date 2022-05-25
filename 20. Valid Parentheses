@@ -1,0 +1,24 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        t=[]
+        c=-1
+        #checks directly if its odd length or even length
+        if len(s)%2==0:
+            for i in range(len(s)):
+                if s[i]=="(" or s[i]=="{"or s[i]=="[":
+                    t.append(s[i])                   
+                    c=c+1
+                else :
+                    if len(t)>0 and ((s[i] == ")" and t[c]=="(") or (s[i] == "}" and t[c]=="{") or (s[i] == "]" and t[c]=="[")):
+                        t.pop()
+                        c-=1                        
+                    else:
+                        return 0           
+        else:
+            return 0
+        
+        
+        if c > 0:
+            return 0
+        else:
+            return 1
