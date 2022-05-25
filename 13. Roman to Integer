@@ -1,0 +1,20 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        roman={"I":1,"V":5,"X":10, "L":50, "K":900,"C":100, "D":500,"M":1000,"W":40,"T":90 , "Q":400,"G":4,"H":9}
+        st=0
+        if "CM" in s:
+            s=s.replace("CM","K")
+        if "CD" in s:
+            s=s.replace("CD","Q") 
+        if "XL" in s:
+            s=s.replace("XL","W") 
+        if "XC" in s:
+            s=s.replace("XC","T") 
+        if "IV" in s:
+            s=s.replace("IV","G")
+        if "IX" in s:
+            s=s.replace("IX","H")
+        for i in s:
+            print(i)
+            st = st + int(roman[i])
+        return st  
