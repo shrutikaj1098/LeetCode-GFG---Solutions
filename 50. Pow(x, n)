@@ -1,0 +1,22 @@
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+            return x**n
+    """
+        OR 
+
+        return pow(x,n)
+
+
+        OR
+    
+        
+        i=0
+        sum = float(1)
+        if n>=0:
+            for i in range(n):
+                sum=sum*x
+        else:
+            for i in range(abs(n)):
+                sum=sum/x
+            return float(sum)
+    """        
