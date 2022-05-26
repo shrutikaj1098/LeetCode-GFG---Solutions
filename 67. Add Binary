@@ -1,0 +1,30 @@
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        
+        a1=list(a)
+        a1.reverse()
+        a2=list(b)
+        a2.reverse()
+        i=0
+        sum1=0
+        for i in range(len(a1)):
+            sum1+=int(a1[i])*2**(i)
+            print(sum1)
+        j=0
+        sum2=0
+        for j in range(len(a2)):
+            sum2+=int(a2[j])*2**(j)
+            
+        sum3=sum1+sum2
+        return "{0:b}".format(sum3)
+    
+        """
+        OR
+        
+        a1=int(a,2)
+        a2=int(b,2)
+        sum3=a1+a2
+        return "{0:b}".format(sum3)        
+    
+        """
+            
