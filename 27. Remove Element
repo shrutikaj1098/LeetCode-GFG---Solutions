@@ -6,7 +6,6 @@ class Solution:
                 nums[i] = -1
                 count+=1
                 
-        nums.sort()
-        nums.reverse()
+        nums.sort(reverse=True)
         t=len(nums)-count
         return t
