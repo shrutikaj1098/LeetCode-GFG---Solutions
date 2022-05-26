@@ -1,0 +1,15 @@
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        s1=list(s)
+        s1.reverse()
+        i=0
+        count=0
+    #For initial spaces:
+        while s1[i]==" ":
+            i+=1
+            continue
+    #For words:
+        while i<len(s1) and s1[i]!=" ":
+            count=count+1;
+            i=i+1
+        return count
