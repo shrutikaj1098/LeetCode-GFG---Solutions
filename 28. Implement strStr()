@@ -1,0 +1,24 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        n1=list(haystack)
+        n2=list(needle)
+        if needle in haystack and len(n1)>1 :
+            i=0
+            for i in range(len(n1)):
+                j=0
+                t=i
+                print(t)
+                while  (j <len(n2) and n2[j]==n1[i]) :
+                    print(i,j)
+                    i+=1
+                    j+=1
+                    
+                if j==len(n2):
+                    return t
+                else:
+                    i=t+1
+        else:
+            if needle in haystack :
+                return 0
+            else:
+                return -1
