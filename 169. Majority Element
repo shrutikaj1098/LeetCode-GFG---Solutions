@@ -1,0 +1,12 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        nums.sort()        
+        if len(nums)>1:
+            a,b=0,len(nums)-1
+            c=a+b//2
+            t= nums[c]
+        elif len(nums)==1:
+            t= nums[0]
+        else: 
+            t=0
+        return t
