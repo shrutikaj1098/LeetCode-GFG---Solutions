@@ -1,0 +1,7 @@
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:        
+        sum_t, i=0,0
+        for i in range(len(nums)):
+            sum_t+=nums[i]
+            print(sum_t)
+        return int((len(nums)*(len(nums)+1))/2-sum_t)
