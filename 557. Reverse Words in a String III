@@ -1,0 +1,23 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        i=0
+        res=""
+        print(len(s))
+        while(i<len(s)):
+            st=[]
+            while(s[i]!=" "):
+                st.append(s[i])
+                i+=1
+                if(i==len(s)):
+                    break
+            st.reverse()
+            print(st)
+            for j in range(len(st)):
+                res+=chr(ord(st[j]))
+                j+=1
+            if(i==len(s)):
+                break
+            else:
+                res+=" "
+            i+=1
+        return res
