@@ -1,0 +1,20 @@
+class Solution:
+    def divide(self, d: int, dr: int) -> int:
+        count=0
+        sign = True if ((d>=0)==(dr>0)) else False 
+        
+        d = abs(d)
+        dr= abs(dr)
+        total = dr
+        for i in range(31,-1,-1): 
+
+            if dr << i <= d  :
+                d -= dr << i  
+                count += 1 << i
+                
+        count = count if sign else -count
+        
+        if(count>=2**31):
+            return (2**31)-1
+        return int(count)
+            
