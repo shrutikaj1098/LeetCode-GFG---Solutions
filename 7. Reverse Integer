@@ -1,0 +1,12 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        total=0
+        sign = True if (x>0) else False
+        x=abs(x)
+        while(x>0):
+            total=total*10 + x%10
+            x=x//10
+        if total in range(-2**31, 2**31-1):
+            return int(total if sign else -total)
+        else:
+            return 0
