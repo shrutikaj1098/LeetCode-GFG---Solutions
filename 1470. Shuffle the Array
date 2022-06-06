@@ -1,0 +1,11 @@
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        
+        c=[]
+        i,j=0,n
+        while(i<=n+1 and j<=2*n-1):
+            c.append(nums[i])
+            c.append(nums[j])
+            i+=1
+            j+=1
+        return c
