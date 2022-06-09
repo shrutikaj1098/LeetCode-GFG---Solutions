@@ -1,0 +1,12 @@
+class Solution:
+    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
+        letters.append(target)
+        set1=set(letters)
+        set2=list(set1)
+        set2.sort()
+        i=0
+        while(set2[i]!= target):
+            i+=1
+        if i==len(set2)-1:
+            return set2[0]
+        return set2[i+1]
