@@ -1,0 +1,60 @@
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        t=[]
+        k=[]
+        i=0
+        while(i<m):
+            t.append(nums1[i])
+            i+=1
+        j=0
+        while(j<n):
+            k.append(nums2[j])
+            j+=1
+        print(k)
+        nums1.clear()
+        i=0
+        while(i<len(t)):
+            nums1.append(t[i])
+            i+=1
+        nums2.clear()
+        i=0
+        while(i<len(k)):
+            nums2.append(k[i])
+            i+=1
+            
+        nums1.sort()
+        nums2.sort()
+        
+        i,j=0,0
+        c=[]
+        s1=len(nums1)
+        while(i<len(nums1) and j<len(nums2)):
+            if nums1[i]>nums2[j]:
+                c.append(nums2[j])
+                j+=1
+            elif nums1[i]<nums2[j]:
+                c.append(nums1[i])
+                i+=1
+            else:
+                c.append(nums1[i])
+                c.append(nums1[i])
+                i+=1
+                j+=1
+        
+        while(i!=len(nums1)):
+            c.append(nums1[i])
+            i+=1
+                
+        while(j!=len(nums2)):
+            c.append(nums2[j])
+            j+=1
+                
+        nums1.clear()
+        i=0
+        while(i<len(c)):
+            nums1.append(c[i])
+            i+=1
+                
