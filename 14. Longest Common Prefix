@@ -1,0 +1,15 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
+        
+        # min(strs) will return the lexicographically smallest string (not lengthwise)
+        s1 = min(strs)
+        # max(strs) will return the lexicographically largest string (not lengthwise)
+        s2 = max(strs)
+        print(s2)
+        l = len(s1)
+        for i in range(l):
+            if s1[i] != s2[i]:
+                return s1[:i]
+        return s1
