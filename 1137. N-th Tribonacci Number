@@ -1,0 +1,11 @@
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        if n <= 1:
+            return n
+        N=[0,1,1]
+        i=3
+        while i<=n:
+            N.append(sum(N))
+            N.pop(0)
+            i+=1
+        return N[-1]
