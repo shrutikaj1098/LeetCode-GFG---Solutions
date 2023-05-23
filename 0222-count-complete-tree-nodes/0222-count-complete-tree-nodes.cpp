@@ -19,8 +19,11 @@ public:
         if(root->right)solve(root->right,total);
     }
     int countNodes(TreeNode* root) {
-        int total=0;
-        solve(root,total);
-        return total;
+        // int total=0;
+        // solve(root,total);
+        // return total;
+         if(!root)
+            return 0;
+        return 1+countNodes(root->left)+countNodes(root->right);
     }
 };
