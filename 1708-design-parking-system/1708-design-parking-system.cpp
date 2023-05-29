@@ -1,6 +1,6 @@
 class ParkingSystem {
 public:
-    int arr[1000];
+    
     int big1;
     int medium1;
     int small1;
