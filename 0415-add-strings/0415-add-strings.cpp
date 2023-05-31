@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void addre(string num1, string num2, int p1, int p2, int carry,string &ans)
+    void addre(string &num1, string &num2, int p1, int p2, int carry,string &ans)
     {
         if(p1<0 && p2<0)
         {
