@@ -25,30 +25,20 @@ class Solution
     void bubbleSort(int arr[], int n)
     {
         // Your code here  
-        // for(int i=0;i<n-1;i++)
-        // {
-            
-        //     for(int j=0;j<n-1;j++)
-        //     {
-        //         if(arr[j]>arr[j+1])
-        //         {
-        //             swap(arr[j+1],arr[j]);
-        //         }
-            
-                
-        //     }
-            
-        // }
-        for(int i=0;i<n-1;i++)
+        for(int i=0;i<n;i++)
         {
-            for(int j=0;j<n-1;j++)
+            
+            int j=0;
+            while(j<n-1)
             {
                 if(arr[j]>arr[j+1])
                 {
                     swap(arr[j+1],arr[j]);
-                    
                 }
+                j++;
+                
             }
+            
         }
     }
 };
