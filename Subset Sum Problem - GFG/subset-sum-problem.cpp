@@ -14,22 +14,20 @@ public:
     {
         if(sum==0) return 1;
         if(ind==0) return arr[0]==sum;
-        if(dp[ind][sum]!=-1)return dp[ind][sum];
-        bool np= rec(arr,sum,ind-1,dp);
-        bool p=false;
+        if(dp[ind][sum]!=-1) return dp[ind][sum];
+        bool nt=rec(arr,sum,ind-1,dp);
+        bool t=false;
         if(arr[ind]<=sum)
         {
-            p=rec(arr,sum-arr[ind],ind-1,dp);
+            t=rec(arr,sum-arr[ind],ind-1,dp);
+            
         }
-        return dp[ind][sum]=p|np;
-        
-        
+        return dp[ind][sum]=t|nt;
     }
     bool isSubsetSum(vector<int>arr, int sum){
         // code here 
-        int n=arr.size();
-        vector<vector<int>>dp(n+1,vector<int>(sum+1,-1));
-        return rec(arr, sum, n-1,dp);
+        vector<vector<int>>dp(arr.size()+1,vector<int>(sum+1,-1));
+        return rec(arr,sum,arr.size()-1,dp);
     }
 };
 
