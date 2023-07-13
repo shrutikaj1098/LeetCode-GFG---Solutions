@@ -2,10 +2,8 @@ class Solution {
 public:
     int solve(vector<int>& coins, int amount,int ind,vector<vector<int>>&dp)
     {
-        if(ind==0)
-        {
-            return amount%coins[ind]==0;
-        }
+        if(ind<0) return 0;
+        if(amount==0) return 1;
         if(dp[ind][amount]!=-1)return dp[ind][amount];
         int np=0+solve(coins,amount,ind-1,dp);
         int p=0;
