@@ -12,7 +12,7 @@ class Solution {
     }
     int minRemoval(int N, vector<vector<int>> &intervals) {
         // code here
-        sort(intervals.begin(),intervals.end(),compare);
+        sort(intervals.begin(),intervals.end());
         int n=intervals.size();
         vector<vector<int>>merge;
         int tot=0;
