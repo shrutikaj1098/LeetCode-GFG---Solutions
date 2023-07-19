@@ -10,24 +10,30 @@ using namespace std;
 
 class Solution{
   public:
-    int rec(int i, int j, string &s1, string &s2,vector<vector<int>>&dp)
+    int dp[1000][1000];
+    int rec(string &A,string &B,  int i,int j)
     {
-        if(i==0 || j==0) return 0;
-        if(dp[i][j]!=-1) return dp[i][j];
-        if( s1[i-1]==s2[j-1]) return 1+ rec(i-1,j-1,s1,s2,dp);
-        
-        return dp[i][j]=max(rec(i-1,j,s1,s2,dp) , rec(i,j-1,s1,s2,dp));
-        
+        if(i==A.size() || j==B.size()) return 0;
+        if(dp[i][j]!=-1)
+      {
+          return dp[i][j];
+      }
+        int ans=0;
+        if(A[i]==B[j])
+        {
+            ans= 1+rec(A,B,i+1,j+1);
+        }
+        else ans=max(rec(A,B,i+1,j),rec(A,B,i,j+1));
+        return dp[i][j]= ans;
     }
-    int longestPalinSubseq(string A) {
+    int longestPalinSubseq(string s) {
         //code here
+        string t=s;
         
-        string s1=A;
-        string s2=A;
-        reverse(s2.begin(),s2.end());
-        int x=A.length(),y=A.length();
-        vector<vector<int>>dp(x+1,vector<int>(y+1,-1));
-        return rec(x,y,s1,s2,dp);
+        reverse(s.begin(),s.end());
+        // cout<<B;
+        memset(dp,-1,sizeof(dp));
+        return rec(s,t,0,0);
     }
 };
 
